@@ -23,9 +23,9 @@
 $antispam = true; 
 
 // cPanel info
-$cpuser = 'saralaccess'; // cPanel username
-$cppass = 'MZk5gwu2vKE2'; // cPanel password
-$cpdomain = '213.229.120.7'; // cPanel domain or IP
+$cpuser = 'userhere'; // cPanel username
+$cppass = 'passwordhere'; // cPanel password
+$cpdomain = 'mysite.com'; // cPanel domain or IP
 $cpskin = 'x';  // cPanel skin. Mostly x or x2. 
 // See following URL to know how to determine your cPanel skin
 // http://www.zubrag.com/articles/determine-cpanel-skin.php
@@ -33,8 +33,8 @@ $cpskin = 'x';  // cPanel skin. Mostly x or x2.
 // Default email info for new email accounts
 // These will only be used if not passed via URL
 $epass = 'hispassword'; // email password
-$edomain = 'saralaccess.com'; // email domain (usually same as cPanel domain above)
-$equota = 250; // amount of space in megabytes
+$edomain = 'mysite.com'; // email domain (usually same as cPanel domain above)
+$equota = 20; // amount of space in megabytes
 
 ############################################################### 
 # END OF SETTINGS
@@ -60,7 +60,6 @@ while(true) {
 
   if ($antispam) {
     @session_start(); // start session if not started yet
-      $_SESSION['AntiSpamImage']='12345';
     if ($_SESSION['AntiSpamImage'] != $_REQUEST['anti_spam_code']) {
       // set antispam string to something random, in order to avoid reusing it once again
       $_SESSION['AntiSpamImage'] = rand(1,9999999);
